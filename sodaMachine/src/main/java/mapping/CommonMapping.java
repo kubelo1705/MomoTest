@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import database.databasemysql;
+import database.DatabaseMySql;
 
 
 public class CommonMapping {
@@ -71,7 +71,7 @@ public class CommonMapping {
 	
 	public static int getTotalLastDayFromDb(){
 		int totalLastDay=0;
-		Connection CONNECTION=databasemysql.getConnection();
+		Connection CONNECTION=DatabaseMySql.getConnection();
 		String query = "select * from totalperday order by id desc limit 1";
 		Statement statement;
 		try {
@@ -89,7 +89,7 @@ public class CommonMapping {
 	
 	public static int getLastDayFromDb() {
 		int lastDay=0;
-		Connection CONNECTION=databasemysql.getConnection();
+		Connection CONNECTION=DatabaseMySql.getConnection();
 		String query = "select * from totalperday order by id desc limit 1";
 		Statement statement;
 		try {
@@ -106,7 +106,7 @@ public class CommonMapping {
 	}
 	
 	public static boolean writeTodayToDb(int lastDay,int  totalToday) {
-		Connection connection = databasemysql.getConnection();
+		Connection connection = DatabaseMySql.getConnection();
 		String sql = "insert into experience (day,total) values(?,?)";
 		
 		try {

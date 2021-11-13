@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import database.databasemysql;
+import database.DatabaseMySql;
 import model.Product;
 
 public class ProductMapping {
@@ -34,7 +34,7 @@ public class ProductMapping {
 	}
 	public static List<Product> getProductsFromDb(){
 		List<Product> products=new ArrayList<>();
-		Connection CONNECTION=databasemysql.getConnection();
+		Connection CONNECTION=DatabaseMySql.getConnection();
 		String query = "select * from products";
 		Statement statement;
 		try {

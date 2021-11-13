@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class databasemysql implements database{
+public class DatabaseMySql implements Database{
 	private final static String DB_URL = "jdbc:mysql://localhost/sodamachine";
 	private final static String USER = "root";
 	private final static String PASS = "";
